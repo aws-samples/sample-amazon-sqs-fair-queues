@@ -1,0 +1,5 @@
+outputs.json
+.idea
+*.d.ts
+node_modules
+
