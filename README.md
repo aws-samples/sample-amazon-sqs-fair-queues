@@ -4,10 +4,7 @@ This repository contains example code for the Fair Queuing feature of Amazon SQS
 
 # Architecture
 
-The example architecture consists of 1/ API Gateway that accepts the number of messages that should be generated for a given set of groups 2/ An AWS Lambda function that uses SendMessageBatch to produce load 3/ The Amazon SQS Queue 4/ An AWS Lambda consumer that receives the messages and tracks the number of messages to evaluate the effects of Fair Queuing 5/ Amazon CloudWatch dashboard to visualize metrics
-
-(Todo: Add Architecture Diagram)
-
+The example architecture consists of 1/ API Gateway that accepts the number of messages that should be generated for a given set of groups 2/ An AWS Lambda function that uses SendMessageBatch to produce load 3/ The Amazon SQS Queue 4/ An AWS Lambda consumer that receives the messages and tracks the number of messages to evaluate the effects of Fair Queuing 5/ Amazon CloudWatch dashboard to visualize metrics.
 
 # Deployment 
 
@@ -29,6 +26,10 @@ The example architecture consists of 1/ API Gateway that accepts the number of m
 
 ## Walkthrough
 1. Build the application
+   ```bash
+   cd infrastructure
+   ```
+
    ```bash
    npm install && npm run build
    ```

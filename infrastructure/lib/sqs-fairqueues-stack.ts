@@ -119,8 +119,8 @@ export class CdkSqsFairQueuesStack extends cdk.Stack {
 
     consumerLambda.addEventSource(
       new lambdaEventSources.SqsEventSource(queue, {
-        batchSize: 10,
-        maxConcurrency: 50,
+        batchSize: 20,
+        maxConcurrency: 40,
         maxBatchingWindow: cdk.Duration.seconds(1),
       })
     );
@@ -462,7 +462,7 @@ export class ContributorInsightsWidget extends ConcreteWidget {
             ruleName: "ReceivedMessagesPerMessageGroupId",
           },
           legend: { position: LegendPosition.BOTTOM  },
-          period: (this.props.period || cdk.Duration.minutes(5)).toSeconds(),
+          period: (this.props.period || cdk.Duration.minutes(1)).toSeconds(),
           region: this.props.region || cdk.Aws.REGION,
           title: this.props.title,
           view: 'timeSeries',

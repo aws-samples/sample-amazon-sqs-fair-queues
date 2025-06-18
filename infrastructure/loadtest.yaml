@@ -2,7 +2,7 @@ config:
   http:
     timeout: 30
   phases:
-    - duration: 600
+    - duration: 300
       arrivalRate: 1
       name: Generating tenant load
   # Add environment variables for API key
@@ -20,22 +20,22 @@ scenarios:
           json:
             groups:
               - MessageGroupId: "group-1"
-                count: 300
+                count: 500
               - MessageGroupId: "group-2"
-                count: 150
+                count: 25
               - MessageGroupId: "group-3"
-                count: 100
+                count: 25
               - MessageGroupId: "group-4"
-                count: 100
+                count: 25
               - MessageGroupId: "group-5"
-                count: 50
+                count: 25
               - MessageGroupId: "group-6"
-                count: 50
+                count: 25
               - MessageGroupId: "group-7"
-                count: 50
+                count: 25
               - MessageGroupId: "group-8"
-                count: 50
+                count: 25
               - MessageGroupId: "group-9"
-                count: 50
+                count: 25
               - MessageGroupId: "group-10"
-                count: 50
+                count: 25
