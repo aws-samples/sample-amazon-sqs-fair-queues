@@ -1,0 +1,40 @@
+config:
+  http:
+    timeout: 30
+  phases:
+    - name: "Generate tenant load"
+      duration: '10m' 
+      arrivalRate: 1
+  variables:
+    apiKey: "{{ $processEnvironment.API_KEY }}"
+
+scenarios:
+  - name: Start Execution
+    flow:
+      - post:
+          url: "/generateLoad"
+          headers:
+            Content-Type: "application/json"
+            x-api-key: "{{ apiKey }}"
+          json:
+            groups:
+              - MessageGroupId: "group-1"
+                count: 1000
+              - MessageGroupId: "group-2"
+                count: 50
+              - MessageGroupId: "group-3"
+                count: 50
+              - MessageGroupId: "group-4"
+                count: 50
+              - MessageGroupId: "group-5"
+                count: 50
+              - MessageGroupId: "group-6"
+                count: 50
+              - MessageGroupId: "group-7"
+                count: 50
+              - MessageGroupId: "group-8"
+                count: 50
+              - MessageGroupId: "group-9"
+                count: 50
+              - MessageGroupId: "group-10"
+                count: 50
